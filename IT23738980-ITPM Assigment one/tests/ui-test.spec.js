@@ -26,18 +26,18 @@ test.describe('UI Tests - User Interface Behavior', () => {
     await inputField.click();
 
     await inputField.type('mama', { delay: 100 });
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(3000);
     await expect(outputField).toBeVisible();
     let partialOutput = await outputField.textContent();
     console.log(`After typing 'mama': ${partialOutput}`);
 
     await inputField.type(' gamata', { delay: 100 });
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(3000);
     partialOutput = await outputField.textContent();
     console.log(`After typing 'mama gamata': ${partialOutput}`);
 
     await inputField.type(' yanavaa', { delay: 100 });
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const finalOutput = await outputField.textContent();
     console.log(`Final output: ${finalOutput}`);

@@ -15,14 +15,14 @@ test.describe('Negative Functional Tests - Singlish to Sinhala Translation', () 
     console.log('='.repeat(80) + '\n');
   });
 
-  // Test Case 1: Joined words without spaces (stress test)
+  
   test('Neg_Fun_0001 - Convert joined words without proper spacing', async ({ page }) => {
     const input = 'mamagamatayanavaa';
     const expectedOutput = 'මම ගමට යනවා';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -36,14 +36,15 @@ test.describe('Negative Functional Tests - Singlish to Sinhala Translation', () 
     expect(actualOutput?.trim()).toBe(expectedOutput);
   });
 
-  // Test Case 2: Complex joined expression
+  
+
   test('Neg_Fun_0002 - Convert multiple joined words', async ({ page }) => {
     const input = 'matabathkannaoonee';
     const expectedOutput = 'මට බත්  කන්න ඕනේ';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -57,14 +58,14 @@ test.describe('Negative Functional Tests - Singlish to Sinhala Translation', () 
     expect.soft(actualOutput?.trim()).toBeTruthy();
   });
 
-  // Test Case 3: Long paragraph-style input
+ 
   test('Neg_Fun_0003 - Convert long paragraph exceeding 300 characters', async ({ page }) => {
     const input = 'dhitvaa suLi kuNaatuva samaGa aethi vuu gQQvathura saha naayayaeem heethuven maarga sQQvarDhana aDhikaariya sathu maarga kotas 450k vinaashayata pathva aethi athara, ehi samastha dhiga pramaaNaya kiloomiitar 380k pamaNa vana bava pravaahana,mahaamaarga saha naagarika sQQvarDhana amaathYA bimal rathnaayaka saDHahan kaLeeya.';
     const expectedOutput = 'දිව්වා සුළි කුණාටුව සමඟ ඇති වූ ගංවතුර සහ නායයෑම් හේතුවෙන් මාර්ග සංවර්ධන අධිකාරිය සතු මාර්ග කොටස් 450ක් විනාශයට පත්ව ඇති අතර, එහි සමස්ථ දිග ප්‍රමාණය කිලෝමීටර් 380ක් පමණ වන බව ප්‍රවාහන,මහාමාර්ග සහ නාගරික සංවර්ධන අමාත්‍ය බිමල් රත්නායක සඳහන් කළේය.';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -78,14 +79,14 @@ test.describe('Negative Functional Tests - Singlish to Sinhala Translation', () 
     expect(actualOutput?.trim()).toBe(expectedOutput);
   });
 
-  // Test Case 4: Multiple spaces between words
+  
   test('Neg_Fun_0004 - Convert input with multiple consecutive spaces', async ({ page }) => {
     const input = 'mama     gamata     yanavaa';
     const expectedOutput = 'මම ගමට  යනවා';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -99,7 +100,7 @@ test.describe('Negative Functional Tests - Singlish to Sinhala Translation', () 
     expect(actualOutput?.trim()).toBe(expectedOutput);
   });
 
-  // Test Case 5: Line breaks in input
+  
   test('Neg_Fun_0005 - Convert multi-line input with line breaks', async ({ page }) => {
     const input = `mama gamata yanavaa.
 oyaa enavadha maath ekka yanna`;
@@ -107,7 +108,7 @@ oyaa enavadha maath ekka yanna`;
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -121,14 +122,14 @@ oyaa enavadha maath ekka yanna`;
     expect(actualOutput?.trim()).toBe(expectedOutput);
   });
 
-  // Test Case 5a: Multiple line breaks with empty lines
+  
   test('Neg_Fun_0005a - Convert input with multiple line breaks and empty lines', async ({ page }) => {
     const input = `adoo karanawa kiwwanam eeka hariyata karapanko bQQ`;
     const expectedOutput = 'අදෝ කරනවා කිව්වනම්  එක හරියට කරපන්කෝ බං';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -142,14 +143,14 @@ oyaa enavadha maath ekka yanna`;
     expect(actualOutput?.trim()).toBe(expectedOutput);
   });
 
-  // Test Case 6: Complex slang with multiple informal terms
+  
   test('Neg_Fun_0006 - Convert complex slang expression', async ({ page }) => {
     const input = 'mama (pereda) gamata giyaa';
     const expectedOutput = 'මම (පෙරේදා ) ගමට ගියා';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -165,14 +166,14 @@ oyaa enavadha maath ekka yanna`;
 
  
 
-  // Test Case 7: Input with quotation marks
+  
   test('Neg_Fun_0008 - Convert input with quotation marks', async ({ page }) => {
     const input = 'eyaa kiyaavaa "mama karnna oonee" kiyalaa';
     const expectedOutput = 'එයා කියාවා "මම කරන්න  ඕනේ" කියලා';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -186,14 +187,14 @@ oyaa enavadha maath ekka yanna`;
     expect(actualOutput?.trim()).toBe(expectedOutput);
   });
 
-  // Test Case 8: Unusual character combinations
+  
   test('Neg_Fun_0009 - Convert input with special character combinations', async ({ page }) => {
     const input = 'mama sunaQQgu vunee maarga thadhabadhaya nisaa';
     const expectedOutput = 'මම සුනඛ්ඛඟු වුනේ මාර්ග තදබදය නිසා';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -207,14 +208,14 @@ oyaa enavadha maath ekka yanna`;
     expect(actualOutput?.trim()).toBe(expectedOutput);
   });
 
-  // Test Case 9: Complex mixed language with multiple technical terms
+  
   test('Neg_Fun_0010 - Convert complex mixed input with multiple English terms', async ({ page }) => {
     const input = 'reports  tika complete  karalaa mata message  ekak evanna telegram  valata hari naettam Teams meeting ekee link eka evanna';
     const expectedOutput = 'reports  ටික complete  කරලා මට message  එකක් එවන්න telegram  වලට හරි නැත්තම් Teams meeting එකේ link එක එවන්න';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();

@@ -23,7 +23,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -44,7 +44,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -64,7 +64,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -84,7 +84,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -104,7 +104,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -124,7 +124,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -144,7 +144,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -164,7 +164,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -184,7 +184,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -204,7 +204,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -224,7 +224,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -239,12 +239,12 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
   // Test Case 12: Repeated word for emphasis
   test('Pos_Fun_0012 - Convert repeated word expression', async ({ page }) => {
-    const input = 'ha hari';
-    const expectedOutput = 'හා හරි';
+    const input = 'ha ha';
+    const expectedOutput = 'හා හා';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -264,7 +264,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -284,7 +284,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -304,7 +304,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -318,13 +318,13 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
   });
 
   // Test Case 16: Mixed English technical term
-  test('Pos_Fun_0016 - Convert sentence with English technical term (Zoom)', async ({ page }) => {
+  test('Pos_Fun_0016 - Convert sentence with English technical term (Office)', async ({ page }) => {
     const input = 'Office  meeting ekak thiyennee';
     const expectedOutput = 'Office  meeting එකක් තියෙන්නේ';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -338,13 +338,13 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
   });
 
   // Test Case 17: Place names with English words
-  test('Pos_Fun_0017 - Convert sentence with place name (Colombo)', async ({ page }) => {
+  test('Pos_Fun_0017 - Convert sentence with place name (Kandy)', async ({ page }) => {
     const input = 'ayiya Kandy yanna hadhannee';
     const expectedOutput = 'අයියා  Kandy යන්න හදන්නේ';
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -364,7 +364,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -384,7 +384,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();
@@ -404,7 +404,7 @@ test.describe('Positive Functional Tests - Singlish to Sinhala Translation', () 
 
     const inputField = page.locator('textarea').first();
     await inputField.fill(input);
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(3000);
 
     const outputField = page.locator('div:has-text("Sinhala")').locator('..').locator('div').nth(1);
     await expect(outputField).toBeVisible();

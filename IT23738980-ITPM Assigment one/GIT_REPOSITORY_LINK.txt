@@ -14,7 +14,7 @@ To upload this project to GitHub:
 2. Push your local repository to GitHub:
    
    cd singlish-translator-tests
-   git remote add origin https://github.com/YOUR_USERNAME/singlish-translator-tests.git
+   git remote add origin https://github.com/thew2002-2002/ITPM-project.git
    git branch -M main
    git push -u origin main
 

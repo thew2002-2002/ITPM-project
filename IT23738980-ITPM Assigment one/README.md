@@ -1,21 +1,120 @@
 # Singlish to Sinhala Translator - Automated Testing Project
 
-This project contains automated tests for the Singlish to Sinhala translation system at https://www.swifttranslator.com/
+**Student ID:** IT23738980  
+**Student Name:** Nimanya H N T  
+**Course:** BSc (Hons) Information Technology - Year 3  
+**Assignment:** IT3040 ITPM Assignment 1
+
+---
+
+## Overview
+
+This project contains a comprehensive automated test suite for the **Singlish to Sinhala translation system** hosted at https://www.swifttranslator.com/. 
+
+### Test Purpose
+- Validate the translator's ability to convert informal Singlish text to formal Sinhala script
+- Test edge cases, stress scenarios, and UI responsiveness
+- Ensure real-time translation functionality works correctly
+- Verify handling of special characters, line breaks, and mixed-language inputs
+
+### Test Framework
+- **Framework:** Playwright (Automated browser testing)
+- **Language:** JavaScript/Node.js
+- **Test Runner:** npm scripts
+- **Browser:** Chromium
+
+---
+
+## Test Tags & Classification
+
+| Tag | Type | Count | Purpose |
+|-----|------|-------|---------|
+| `Pos_Fun_XXXX` | **Positive Functional** | 24 | Verify correct translations for valid inputs |
+| `Neg_Fun_XXXX` | **Negative Functional** | 10 | Test edge cases, boundary conditions, and robustness |
+| `Pos_UI_XXXX` | **Positive UI** | 1 | Validate real-time UI update behavior |
+
+**Total Test Cases:** 35
+
+---
 
 ## Project Structure
 
 ```
-singlish-translator-tests/
-├── tests/
-│   ├── positive-functional.spec.js  (24 positive test cases)
-│   ├── negative-functional.spec.js  (10 negative test cases)
-│   └── ui-test.spec.js              (1 UI test case)
-├── playwright.config.js
-├── package.json
-└── README.md
+IT23738980-ITPM Assignment one/
+├── tests/                              # Test suite directory
+│   ├── positive-functional.spec.js     # 24 positive test cases (valid inputs)
+│   ├── negative-functional.spec.js     # 10 negative test cases (edge cases)
+│   └── ui-test.spec.js                 # 1 UI behavioral test
+├── test-results/                       # Generated test artifacts
+│   ├── [test-result-folders]/          # Individual test execution results
+│   └── *.md                            # Error context files
+├── playwright-report/                  # HTML test report
+│   ├── index.html                      # Main report page
+│   └── data/                           # Report data files
+├── playwright.config.js                # Playwright configuration
+├── package.json                        # Dependencies and npm scripts
+├── README.md                           # Project documentation
+└── GIT_REPOSITORY_LINK.txt             # GitHub setup instructions
 ```
 
-## Test Coverage
+### Key Files Description
+
+| File | Purpose |
+|------|---------|
+| `positive-functional.spec.js` | Core functionality tests: valid Singlish → Sinhala conversions |
+| `negative-functional.spec.js` | Robustness tests: joined words, long text, special chars, etc. |
+| `ui-test.spec.js` | Real-time translation UI behavior verification |
+| `playwright.config.js` | Test execution settings (URL, timeout, browser) |
+| `package.json` | Project dependencies and test scripts |
+
+## Test Execution Flow
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│         Test Suite Initialization                           │
+│  - Load Playwright framework                                │
+│  - Configure Chromium browser                               │
+│  - Set base URL: https://www.swifttranslator.com/          │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+          ▼              ▼              ▼
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│  Positive    │ │  Negative    │ │     UI       │
+│  Functional  │ │  Functional  │ │    Test      │
+│  Tests (24)  │ │  Tests (10)  │ │     (1)      │
+└──────┬───────┘ └──────┬───────┘ └──────┬───────┘
+       │                │                │
+       │    ┌───────────┼───────────┐    │
+       │    │           │           │    │
+       ▼    ▼           ▼           ▼    ▼
+┌─────────────────────────────────────────────────┐
+│  For Each Test Case:                            │
+│  1. beforeEach: Navigate to translator page     │
+│  2. Wait for page to fully load (networkidle)   │
+│  3. Locate input textarea element               │
+│  4. Fill with Singlish input text               │
+│  5. Wait 3000ms for real-time translation       │
+│  6. Locate output Sinhala div element           │
+│  7. Capture actual output                       │
+│  8. Assert: actual output === expected output   │
+│  9. Log results to console                      │
+└──────────────┬────────────────────────────────┘
+               │
+       ┌───────┴────────┐
+       │                │
+    PASS            FAIL
+       │                │
+       ▼                ▼
+   ✅ Success      📸 Screenshot
+   📝 Logged       🎬 Video
+                   📋 Error Log
+```
+
+---
+
+## Test Case Summary by Category
 
 ### Positive Functional Tests (24 test cases)
 - Simple, compound, and complex sentence structures
@@ -135,7 +234,35 @@ The UI test:
 2. Monitors real-time output updates
 3. Verifies output visibility and content generation
 
-## Troubleshooting
+## Test Execution Details
+
+Each functional test follows this sequence:
+
+1. **Setup Phase (`beforeEach`)**
+   - Navigate to https://www.swifttranslator.com/
+   - Wait for page resources to fully load (`networkidle`)
+
+2. **Test Execution**
+   - Input: Fill textarea with Singlish text
+   - Delay: Wait 3000ms for real-time translation processing
+   - Capture: Extract Sinhala output from output div
+   - Assert: Compare actual vs expected output
+
+3. **Cleanup & Reporting**
+   - Log test results (input, expected, actual)
+   - Log issue/context information
+   - Generate screenshots/videos for failures
+   - Output summary to console
+
+---
+
+The UI test follows a character-by-character typing pattern to verify real-time responsiveness:
+- Type each word segment with 100ms delay between keystrokes
+- Wait 3000ms between segments for translation
+- Verify output div updates with each keystroke
+- Confirm final output matches expected Sinhala text
+
+---
 
 If tests fail to run:
 1. Ensure Node.js and npm are properly installed
@@ -145,4 +272,26 @@ If tests fail to run:
 
 ## Author
 
-IT3040 ITPM Assignment 1 - BSc (Hons) Information Technology Year 3
+**Student:** Nimanya H N T  
+**Student ID:** IT23738980  
+**Course:** BSc (Hons) Information Technology - Year 3  
+**Assignment:** IT3040 ITPM Assignment 1  
+**Date:** January 2026
+
+---
+
+## Quick Start
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Install browsers
+npx playwright install chromium
+
+# 3. Run all tests
+npm test
+
+# 4. View report
+npm run report
+```
