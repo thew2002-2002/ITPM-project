@@ -1,0 +1,28 @@
+GITHUB REPOSITORY SETUP INSTRUCTIONS
+=====================================
+
+To upload this project to GitHub:
+
+1. Create a new repository on GitHub:
+   - Go to https://github.com/new
+   - Repository name: singlish-translator-tests
+   - Description: Automated testing for Singlish to Sinhala translator (IT3040 ITPM Assignment 1)
+   - Select "Public" visibility
+   - Do NOT initialize with README (we already have one)
+   - Click "Create repository"
+
+2. Push your local repository to GitHub:
+   
+   cd singlish-translator-tests
+   git remote add origin https://github.com/YOUR_USERNAME/singlish-translator-tests.git
+   git branch -M main
+   git push -u origin main
+
+3. Your repository URL will be:
+   https://github.com/YOUR_USERNAME/singlish-translator-tests
+
+4. Verify the repository is public and accessible
+
+IMPORTANT: Replace YOUR_USERNAME with your actual GitHub username
+
+The local Git repository has already been initialized with all files committed.
